@@ -7,8 +7,9 @@ namespace FileData
     {
         IList<Adult> GetAdults();
         void AddAdult(Adult adult);
+        
         void RemoveAdult(int Id);
-        void Update(Models.Adult adult);
-        Models.Adult Get(int age);
+        void Update(Adult adult);
+        Adult Get(int age);
     }
 }

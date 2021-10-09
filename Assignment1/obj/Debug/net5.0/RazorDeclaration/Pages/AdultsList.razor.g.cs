@@ -105,7 +105,7 @@ using FileData;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 83 "/Users/peterblasko/RiderProjects/Assignment1/Assignment1/Pages/AdultsList.razor"
+#line 82 "/Users/peterblasko/RiderProjects/Assignment1/Assignment1/Pages/AdultsList.razor"
        
 
 
@@ -113,7 +113,7 @@ using FileData;
     private IList<Adult> allAdults;
 
     private int? filterByAge;
-
+    
 
     private void FilterByAge(ChangeEventArgs changeEventArgs)
     {
@@ -127,7 +127,9 @@ using FileData;
         }
         ExecuteFilter();
     }
+    
 
+   
 
     private void ExecuteFilter()
     {
@@ -142,12 +144,14 @@ using FileData;
     }
 
     private void RemoveAdult(int Id)
-    {
-        Adult adultToRemove = allAdults.First(t => t.Id == Id);
+   {
+       Adult adultToRemove = allAdults.First(t => t.Id == Id);
         AdultsData.RemoveAdult(Id);
         allAdults.Remove(adultToRemove);
-        adultsToShow.Remove(adultToRemove);
+      adultsToShow.Remove(adultToRemove);
     }
+
+    
 
 
     private void Filter(ChangeEventArgs changeEventArgs)
@@ -169,7 +173,7 @@ using FileData;
             adultsToShow = allAdults;
         }
     }
-
+    
 
     private void Edit(int id)
     {

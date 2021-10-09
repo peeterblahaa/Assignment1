@@ -53,9 +53,9 @@
 /Users/peterblasko/RiderProjects/Assignment1/Assignment1/obj/Debug/net5.0/Assignment1.csproj.CopyComplete
 /Users/peterblasko/RiderProjects/Assignment1/Assignment1/obj/Debug/net5.0/RazorDeclaration/Pages/Adults.razor.g.cs
 /Users/peterblasko/RiderProjects/Assignment1/Assignment1/obj/Debug/net5.0/Razor/Pages/Adults.razor.g.cs
-/Users/peterblasko/RiderProjects/Assignment1/Assignment1/bin/Debug/net5.0/adults.json
 /Users/peterblasko/RiderProjects/Assignment1/Assignment1/obj/Debug/net5.0/RazorDeclaration/Pages/AdultsList.razor.g.cs
 /Users/peterblasko/RiderProjects/Assignment1/Assignment1/obj/Debug/net5.0/Razor/Pages/AdultsList.razor.g.cs
 /Users/peterblasko/RiderProjects/Assignment1/Assignment1/bin/Debug/net5.0/families.json
 /Users/peterblasko/RiderProjects/Assignment1/Assignment1/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs
 /Users/peterblasko/RiderProjects/Assignment1/Assignment1/obj/Debug/net5.0/Razor/Pages/Login.razor.g.cs
+/Users/peterblasko/RiderProjects/Assignment1/Assignment1/bin/Debug/net5.0/adults.json

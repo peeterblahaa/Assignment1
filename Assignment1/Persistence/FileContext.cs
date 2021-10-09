@@ -9,11 +9,11 @@ namespace FileData
 {
     public class FileContext : AdultsData
     {
-        public IList<Family> Families { get; private set; }
+       
         public IList<Adult> Adults { get; private set; }
 
 
-        private readonly string familiesFile = "families.json";
+        
         private readonly string adultsFile = "adults.json";
 
         public FileContext()
@@ -52,7 +52,7 @@ namespace FileData
 
         public void AddAdult(Adult adult)
         {
-            int max = Adults.Max(todo => todo.Id);
+            int max = Adults.Max(adult1 => adult1.Id);
             adult.Id = (++max);
             Adults.Add(adult);
             SaveChanges();

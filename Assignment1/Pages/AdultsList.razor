@@ -15,6 +15,8 @@
 </p>
 
 
+
+
 @if (adultsToShow == null)
 {
     <p>
@@ -33,16 +35,15 @@ else
         <thead>
         <tr>
             <th>ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Hair Color</th>
-            <th>Eye Color</th>
+            <th>FName</th>
+            <th>LName</th>
+            <th>HC</th>
+            <th>EC</th>
             <th>Age</th>
             <th>Weight</th>
             <th>Height</th>
             <th>Sex</th>
-            <th>Job Title</th>
-            <th>Salary</th>
+            <th>JT</th>
             <th>Remove</th>
             <th>Edit</th>
         </tr>
@@ -60,8 +61,6 @@ else
                 <td>@item.Weight</td>
                 <td>@item.Height</td>
                 <td>@item.Sex</td>
-                <td>@item.JobTitle.Salary</td>
-
 
                 <td>
                     <button @onclick="@(() => RemoveAdult(item.Id))">
@@ -87,7 +86,7 @@ else
     private IList<Adult> allAdults;
 
     private int? filterByAge;
-
+    
 
     private void FilterByAge(ChangeEventArgs changeEventArgs)
     {
@@ -101,7 +100,9 @@ else
         }
         ExecuteFilter();
     }
+    
 
+   
 
     private void ExecuteFilter()
     {
@@ -116,12 +117,14 @@ else
     }
 
     private void RemoveAdult(int Id)
-    {
-        Adult adultToRemove = allAdults.First(t => t.Id == Id);
+   {
+       Adult adultToRemove = allAdults.First(t => t.Id == Id);
         AdultsData.RemoveAdult(Id);
         allAdults.Remove(adultToRemove);
-        adultsToShow.Remove(adultToRemove);
+      adultsToShow.Remove(adultToRemove);
     }
+
+    
 
 
     private void Filter(ChangeEventArgs changeEventArgs)
@@ -143,7 +146,7 @@ else
             adultsToShow = allAdults;
         }
     }
-
+    
 
     private void Edit(int id)
     {
