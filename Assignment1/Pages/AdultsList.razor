@@ -1,0 +1,154 @@
+﻿@page "/Adultslist"
+
+
+
+
+@using Models
+
+@using FileData
+@inject AdultsData AdultsData;
+@inject NavigationManager NavMgr
+
+<h3>Adults List</h3>
+<p>
+    Filter by Age: <input type="number" @oninput="@((arg) => FilterByAge(arg))" style="width:50px"/>
+</p>
+
+
+@if (adultsToShow == null)
+{
+    <p>
+        <em>Loading...</em>
+    </p>
+}
+else if (!adultsToShow.Any())
+{
+    <p>
+        <em>No Adults exist. Please add some.</em>
+    </p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Hair Color</th>
+            <th>Eye Color</th>
+            <th>Age</th>
+            <th>Weight</th>
+            <th>Height</th>
+            <th>Sex</th>
+            <th>Job Title</th>
+            <th>Salary</th>
+            <th>Remove</th>
+            <th>Edit</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in adultsToShow)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.HairColor</td>
+                <td>@item.EyeColor</td>
+                <td>@item.Age</td>
+                <td>@item.Weight</td>
+                <td>@item.Height</td>
+                <td>@item.Sex</td>
+                <td>@item.JobTitle.Salary</td>
+
+
+                <td>
+                    <button @onclick="@(() => RemoveAdult(item.Id))">
+                        <i class="oi oi-trash" style="color:red"/>
+                    </button>
+                </td>
+                <td>
+                    <button @onclick="@(() => Edit(item.Id))">
+                        <i class="oi oi-pencil" style="color:#1b6ec2"/>
+                    </button>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+
+@code {
+
+
+    private IList<Adult> adultsToShow;
+    private IList<Adult> allAdults;
+
+    private int? filterByAge;
+
+
+    private void FilterByAge(ChangeEventArgs changeEventArgs)
+    {
+        filterByAge = null;
+        try
+        {
+            filterByAge = int.Parse(changeEventArgs.Value.ToString());
+        }
+        catch (Exception e)
+        {
+        }
+        ExecuteFilter();
+    }
+
+
+    private void ExecuteFilter()
+    {
+        adultsToShow = allAdults.Where(t => (filterByAge != null && t.Age == filterByAge || filterByAge == null)).ToList();
+    }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        allAdults = AdultsData.GetAdults();
+        adultsToShow = allAdults;
+    }
+
+    private void RemoveAdult(int Id)
+    {
+        Adult adultToRemove = allAdults.First(t => t.Id == Id);
+        AdultsData.RemoveAdult(Id);
+        allAdults.Remove(adultToRemove);
+        adultsToShow.Remove(adultToRemove);
+    }
+
+
+    private void Filter(ChangeEventArgs changeEventArgs)
+    {
+        int? filterByAge = null;
+        try
+        {
+            filterByAge = int.Parse(changeEventArgs.Value.ToString());
+        }
+        catch (Exception e)
+        {
+        }
+        if (filterByAge != null)
+        {
+            adultsToShow = allAdults.Where(t => t.Age == filterByAge).ToList();
+        }
+        else
+        {
+            adultsToShow = allAdults;
+        }
+    }
+
+
+    private void Edit(int id)
+    {
+        NavMgr.NavigateTo($"Edit/{id}");
+    }
+
+
+}
