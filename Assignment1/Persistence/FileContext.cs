@@ -52,8 +52,6 @@ namespace FileData
 
         public void AddAdult(Adult adult)
         {
-            int max = Adults.Max(adult1 => adult1.Id);
-            adult.Id = (++max);
             Adults.Add(adult);
             SaveChanges();
         }

@@ -112,15 +112,32 @@ using System.Threading.Tasks.Dataflow;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 29 "/Users/peterblasko/RiderProjects/Assignment1/Assignment1/Pages/Adults.razor"
+#line 33 "/Users/peterblasko/RiderProjects/Assignment1/Assignment1/Pages/Adults.razor"
        
-    private Adult newAdultItem = new Adult();
+    
 
     private void AddNewAdult()
     {
         AdultData.AddAdult(newAdultItem);
         NavigationManager.NavigateTo("/Adultslist");
     }
+    
+    private Adult newAdultItem = new()
+    {
+        Id = 0,
+        Age = 0,
+        Height = 0,
+        Sex = null,
+        Weight = 0,
+        EyeColor = null,
+        FirstName = null,
+        HairColor = null,
+        LastName = null, JobTitle = new Job()
+        {
+            JobTitle = null,
+            Salary = 0
+        }
+    };
 
 
 #line default

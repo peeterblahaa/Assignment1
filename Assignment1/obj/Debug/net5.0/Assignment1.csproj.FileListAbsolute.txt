@@ -58,4 +58,3 @@
 /Users/peterblasko/RiderProjects/Assignment1/Assignment1/bin/Debug/net5.0/families.json
 /Users/peterblasko/RiderProjects/Assignment1/Assignment1/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs
 /Users/peterblasko/RiderProjects/Assignment1/Assignment1/obj/Debug/net5.0/Razor/Pages/Login.razor.g.cs
-/Users/peterblasko/RiderProjects/Assignment1/Assignment1/bin/Debug/net5.0/adults.json
