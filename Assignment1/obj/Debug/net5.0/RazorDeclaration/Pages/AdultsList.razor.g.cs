@@ -152,27 +152,6 @@ using FileData;
     }
 
     
-
-
-    private void Filter(ChangeEventArgs changeEventArgs)
-    {
-        int? filterByAge = null;
-        try
-        {
-            filterByAge = int.Parse(changeEventArgs.Value.ToString());
-        }
-        catch (Exception e)
-        {
-        }
-        if (filterByAge != null)
-        {
-            adultsToShow = allAdults.Where(t => t.Age == filterByAge).ToList();
-        }
-        else
-        {
-            adultsToShow = allAdults;
-        }
-    }
     
 
     private void Edit(int id)
