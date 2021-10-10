@@ -112,16 +112,16 @@ using System.Threading.Tasks.Dataflow;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 33 "/Users/peterblasko/RiderProjects/Assignment1/Assignment1/Pages/Adults.razor"
+#line 45 "/Users/peterblasko/RiderProjects/Assignment1/Assignment1/Pages/Adults.razor"
        
-    
+
 
     private void AddNewAdult()
     {
         AdultData.AddAdult(newAdultItem);
         NavigationManager.NavigateTo("/Adultslist");
     }
-    
+
     private Adult newAdultItem = new()
     {
         Id = 0,

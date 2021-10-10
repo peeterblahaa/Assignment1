@@ -40,7 +40,7 @@ namespace Assignment1
                     a.RequireAuthenticatedUser().RequireClaim("Level", "4","5"));
             
                 options.AddPolicy("MustBeMale",  a => 
-                    a.RequireAuthenticatedUser().RequireClaim("Sex", "Male"));
+                    a.RequireAuthenticatedUser().RequireClaim("Sex", "M"));
             
                 options.AddPolicy("SecurityLevel2", policy =>
                     policy.RequireAuthenticatedUser().RequireAssertion(context => {

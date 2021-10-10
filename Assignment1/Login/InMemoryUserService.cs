@@ -18,7 +18,7 @@ namespace FileData
                 {
                     City = "Bratislava",
                     Password = "123456",
-                    Sex = "Male", 
+                    Sex = "M", 
                     BirthYear = 1999,
                     SecurityLevel = 4, 
                     UserName = "Peter"
@@ -27,10 +27,10 @@ namespace FileData
                 {
                     City = "Prague",
                     Password = "654321", 
-                    Sex = "Female",
+                    Sex = "F",
                     BirthYear = 2000,
                     SecurityLevel = 2, 
-                    UserName = "Milan"
+                    UserName = "Leo"
                 }
             }.ToList();
         }
